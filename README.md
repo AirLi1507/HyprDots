@@ -34,7 +34,7 @@
 
 ## Special Credits 
 <font size="4">
-- [@UmmItC](https://github.com/UmmItC) - For inviting and bringing me into the world of Arch Linux and Hyprland!
+- @UmmItC - For inviting and bringing me into the world of Arch Linux and Hyprland!
 
 - [Hyprland](https://hyprland.org/) - For creating such beautiful, customizable tiling windows manager!
 
