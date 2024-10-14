@@ -1,0 +1,86 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 0,
+    "modules-left": ["hyprland/window","tray"],
+    "modules-center": ["clock","hyprland/workspaces","cpu","memory",],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "custom/notification",
+        "custom/power"
+    ],
+
+    "clock": {
+        "format": " {:%Y/%m/%d }",
+        "format-alt": " {:%H:%M:%S}",
+        "interval": 1
+    },
+    "network": {
+        "interface": "enp6s0",
+        "tooltip-format-ethernet": "{ifname} ",
+        "interval": 1,
+        "format": " {bandwidthDownBits}  {bandwidthUpBits}"
+    },
+    "tray": {
+        "icon-size": 24,
+        "spacing": 5
+    },
+    "cpu": {
+        "interval": 1,
+        "format": " {}%",
+        "max-length": 20
+    },
+    "memory": {
+        "interval": 1,
+        "format": " {}%",
+        "max-length": 20
+    },
+    "hyprland/workspaces": {
+        "all-outputs": false,
+        "format": "{name}",
+        "on-scroll-up": "hyprctl dispatch workspace r+1",
+        "on-scroll-down": "hyprctl dispatch workspace r-1",
+        "persistent-workspaces": {
+            "HDMI-A-1": [ 1, 2, 3, 4, 5], // workspace 1 shown on DP-3
+            "DP-1": [ 6, 7, 8, 9, 10] // workspaces 2 and 3 shown on DP-1
+      }
+    },
+    "hyprland/window": {
+        "max-length": 48,
+        "separate-outputs": true
+    },
+    "custom/power": {
+        "format": "⏻",
+        "tooltip-format": "Power",
+        "on-click": "wlogout"
+    },
+    "network": {
+        "interface": "enp6s0",
+        "tooltip-format-ethernet": "{ifname} ",
+        "interval": 1,
+        "format": " {bandwidthDownBits}  {bandwidthUpBits}"
+    },
+    "custom/notification": {
+        "format": "",
+        "tooltip-format": "Notifications",
+        "on-click": "swaync-client -t -sw"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "alsa_output.pci-0000_00_1f.3.analog-stereo": " ",
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "tooltip-format": "Sound",
+        "scroll-step": 1,
+        "on-click": "pwvucontrol"
+    }
+}
