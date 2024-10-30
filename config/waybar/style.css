@@ -30,15 +30,15 @@
 	margin: 0 2.5px;
 	border-radius: 15px;
 	opacity: .5;
-	transition: .45s;
+	transition: .45s ease;
 }
 
 #workspaces button.active {
-	min-width: 40px;
+	min-width: 45px;
 	opacity: 1;
 }
 
-#workspaces button:hover {opacity: .75;}
+#workspaces button:hover:not(.active) {opacity: .75;}
 
 #window, #clock, #custom-notification, #custom-bluetooth, #custom-power {
 	color: #e4f6ff;
