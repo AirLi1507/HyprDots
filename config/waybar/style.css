@@ -7,74 +7,84 @@
 	box-shadow: inherit;
 }
 
+#waybar {background-color: rgba(0, 10, 32, 0.625);}
+
+#workspaces, #tray, #memory, #cpu, #pulseaudio, #network, #window, #clock, #custom-notification, #custom-bluetooth, #custom-power, #custom-arch {
+	border-radius: 15px;
+	padding: 8px 16px;
+	margin: 10px 0;
+	transition: .3s;
+}
+
+#tray {padding: 10px;}
+
 #workspaces {
 	background: linear-gradient(45deg, #e4f6ff, #7ac8f3);
-	border-radius: 15px;
 	padding: 5px;
-	margin: 10px 0px 10px 0px;
+	margin: 10px 0;
 }
 
 #workspaces button {
 	color: #e9fcff;
 	background: linear-gradient(30deg, #14befc, #055dc8);
-	margin: 0 2px.5px;
+	margin: 0 2.5px;
 	border-radius: 15px;
 	opacity: .5;
+	transition: .45s;
 }
 
 #workspaces button.active {
 	min-width: 40px;
 	opacity: 1;
-	transition: min-width .45s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
-#workspaces button:hover {
-	opacity: .75;
-	transition: .3s ease;
-}
+#workspaces button:hover {opacity: .75;}
 
-window#waybar {
-	background-color: rgba(0, 10, 32, 0.25);
-}
-
-#window, #clock {
-	color: #e9fcff;
-	margin: 10px 0px 10px 15px;
+#window, #clock, #custom-notification, #custom-bluetooth, #custom-power {
+	color: #e4f6ff;
 	background: linear-gradient(30deg, #14befc, #055dc8);
-	border-radius: 18px;
-	padding: 8px;
 }
 
-#clock {padding: 8px 6px 8px 8px; margin: 10px;}
+#clock {
+	padding: 10px 10px 10px 10px;
+	margin: 10px;
+}
 
-#tray, #memory, #cpu {
+#tray, #memory, #cpu, #pulseaudio {
 	color: #007eb4;
 	background: linear-gradient(45deg, #e4f6ff, #7ac8f3);
-	border-radius: 15px;
-	padding: 8px 16px;
-	margin: 10px 5px;
 }
 
-#cpu {margin: 10px 5px 10px 10px;}
+#tray {margin: 10px 5px 10px 20px;}
 
-#tray {margin: 10px 0px 10px 20px;}
+#cpu {margin: 10px;}
 
 #network {
-	color: #ffc115;
-	margin: 10px 20px 10px 0px;
-}
-
-#custom-notification, #pulseaudio, #custom-power {
 	color: #e4f6ff;
-	padding: 0px 19px 0px 16px;
-	margin: 10px 15px 10px 0px;
-	border-radius: 15px;
+	margin: 10px 15px 10px 0;
+	background: linear-gradient(45deg, #006090, #002b42);
 }
 
-#custom-notification {background: linear-gradient(45deg, #ffb515, #db8700);}
+#custom-notification, #custom-bluetooth, #custom-power {
+	padding: 0 19px 0 16px;
+	margin: 10px 15px 10px 0;
+}
 
-#pulseaudio {color: #007eb4;background: linear-gradient(45deg, #e4f6ff, #7ac8f3);}
+#custom-bluetooth {
+	font-size: 125%;
+	padding: 0 16px;
+}
 
-/* #pulseaudio {background: linear-gradient(45deg, #0de030, #00a310);} */
+#pulseaudio {
+	padding-right: 24px;
+	margin-left: 0;
+	margin-right: 15px;
+}
 
-#custom-power{background: linear-gradient(45deg, #ff5a5a, #c61515);}
+#custom-arch {
+	color: #2281f5;
+	font-size: 200%;
+	padding: 0 19px 0 10px;
+	margin: 10px 20px 10px 15px;
+	background: linear-gradient(45deg, #e4f6ff, #7ac8f3);
+}

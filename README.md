@@ -39,7 +39,7 @@ sudo pacman -S fastfetch hyprland kitty waybar swaync ttf-jetbrains-mono-nerd pi
 
 ---
 
-### Command to set the wallpaper 💾:
+## Command to set the wallpaper 💾:
 
 <font size="4"><b>Wallpaper 1 🏞️:</b> Ilot from the Rhythm game Rotateno: </font>
 <code>swww img ~/.wallpaper/rotaeno_ilot_x16_drawing.png</code>

@@ -1,30 +1,59 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 0,
-    "modules-left": ["hyprland/window","tray"],
-    "modules-center": ["clock","hyprland/workspaces","cpu","memory",],
+    "height": 1,
+    "modules-left": [
+        "custom/arch",
+        "hyprland/window",
+        "tray"
+    ],
+    "modules-center": [
+        "clock",
+        "hyprland/workspaces",
+        "cpu",
+        "memory"
+    ],
     "modules-right": [
         "network",
         "pulseaudio",
         "custom/notification",
+        "custom/bluetooth",
         "custom/power"
     ],
 
-    "clock": {
-        "format": " {:%Y/%m/%d }",
-        "format-alt": " {:%H:%M:%S}",
-        "interval": 1
-    },
-    "network": {
-        "interface": "enp6s0",
-        "tooltip-format-ethernet": "{ifname} ",
-        "interval": 1,
-        "format": " {bandwidthDownBits}  {bandwidthUpBits}"
+
+
+    "custom/arch": {
+        "format": "",
+        "tooltip-format": "Arch Linux",
+	"on-click": "fuzzel"
     },
     "tray": {
         "icon-size": 24,
         "spacing": 5
+    },
+    "hyprland/window": {
+        "max-length": 48,
+        "separate-outputs": true
+    },
+
+
+
+    "clock": {
+        "format": " {:%Y/%m/%d}",
+        "format-alt": " {:%H:%M:%S}",
+        "tooltip-format": "Clock",
+        "interval": 1
+    },
+    "hyprland/workspaces": {
+        "all-outputs": false,
+        "format": "{name}",
+        "on-scroll-up": "hyprctl dispatch workspace r+1",
+        "on-scroll-down": "hyprctl dispatch workspace r-1",
+        "persistent-workspaces": {
+            "HDMI-A-1": [1, 2, 3, 4, 5],
+            "DP-1": [6, 7, 8, 9, 10]
+      }
     },
     "cpu": {
         "interval": 1,
@@ -33,38 +62,19 @@
     },
     "memory": {
         "interval": 1,
-        "format": " {}%",
+        // "format": " {}%",
+        "format": "  {}%",
         "max-length": 20
     },
-    "hyprland/workspaces": {
-        "all-outputs": false,
-        "format": "{name}",
-        "on-scroll-up": "hyprctl dispatch workspace r+1",
-        "on-scroll-down": "hyprctl dispatch workspace r-1",
-        "persistent-workspaces": {
-            "HDMI-A-1": [ 1, 2, 3, 4, 5], // workspace 1 shown on DP-3
-            "DP-1": [ 6, 7, 8, 9, 10] // workspaces 2 and 3 shown on DP-1
-      }
-    },
-    "hyprland/window": {
-        "max-length": 48,
-        "separate-outputs": true
-    },
-    "custom/power": {
-        "format": "⏻",
-        "tooltip-format": "Power",
-        "on-click": "wlogout"
-    },
+
+
+
     "network": {
         "interface": "enp6s0",
+        "format": " {bandwidthDownBits}  {bandwidthUpBits} ",
         "tooltip-format-ethernet": "{ifname} ",
         "interval": 1,
-        "format": " {bandwidthDownBits}  {bandwidthUpBits}"
-    },
-    "custom/notification": {
-        "format": "",
-        "tooltip-format": "Notifications",
-        "on-click": "swaync-client -t -sw"
+        "on-click": "kitty nmtui"
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
@@ -82,5 +92,20 @@
         "tooltip-format": "Sound",
         "scroll-step": 1,
         "on-click": "pwvucontrol"
+    },
+    "custom/notification": {
+        "format": "",
+        "tooltip-format": "Notifications",
+        "on-click": "swaync-client -t -sw"
+    },
+    "custom/bluetooth": {
+        "format": "󰂯",
+        "tooltip-format": "Bluetooth",
+        "on-click": "blueberry"
+    },
+    "custom/power": {
+        "format": "⏻",
+        "tooltip-format": "Power",
+        "on-click": "wlogout"
     }
 }
