@@ -41,39 +41,6 @@
   border-bottom: 3px solid rgb(240,250,255);
 }
 
-#tray {
-  color: aliceblue;
-}
-
-#tray > *.active {
-  border-bottom: 3px solid transparent;
-  border-radius: 2px;
-  transition: 0.1s ease;
-}
-
-#tray > *.active:hover {
-  border-bottom: 3px solid rgb(240,250,255);
-}
-
-#tray menu {
-  color: aliceblue;
-  border: 2px solid aliceblue;
-  border-radius: 8px;
-  outline: none;
-  padding: 6px;
-  background: linear-gradient(rgba(0,55,105,0.9) 0%, rgba(0,55,105,0.75) 100%)
-}
-
-#tray menu > * {
-  border-radius: 4px;
-  transition: 0.1s ease;
-}
-
-#tray menu > *:hover {
-  color: rgba(0,55,105,0.85);
-  background: aliceblue;
-}
-
 #clock {
   color: aliceblue;
   font-size: 16px;
@@ -126,15 +93,6 @@
 
 #mpris:hover {
   border-bottom: 3px solid rgb(240,250,255);
-}
-
-#cava {
-  color: aliceblue;
-  transition: 0.25s ease;
-}
-
-#cava.silent {
-  opacity: 0.5;
 }
 
 #pulseaudio-slider {

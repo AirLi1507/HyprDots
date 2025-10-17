@@ -1,0 +1,25 @@
+font_family	hack
+bold_font	auto
+italic_font	auto
+bold_italic_font	auto
+
+font_size 14
+
+background #00040f
+
+background_opacity 0.5
+background_blur 2
+
+shell /bin/zsh
+editor /bin/nano
+
+#clear_all_shortcuts yes
+
+#map ctrl+c copy_or_interrupt
+#map cmd+c copy_or_interrupt
+
+#map ctrl+v paste_from_clipboard
+#map cmd+v paste_from_clipboard
+
+#map ctrl+equal change_font_size all +1.0
+#map ctrl+minus change_font_size all -1.0

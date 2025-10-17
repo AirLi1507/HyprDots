@@ -1,17 +1,15 @@
 {
   "layer": "top",
   "position": "top",
-  "spacing": 12,
+  "spacing": 16,
   "modules-left": [
     "custom/arch",
-    "hyprland/window",
-    "tray"
+    "hyprland/window"
   ],
   "modules-center": [
     "clock",
     "hyprland/workspaces",
-    "mpris",
-    "cava"
+    "mpris"
   ],
   "modules-right": [
     "pulseaudio/slider",
@@ -27,50 +25,32 @@
   },
   "hyprland/window": {
     "format": "{}",
-    "tooltip-format": "{}",
     "rewrite": {
-      "(^.+@.+:*)": "<big></big>   $1",
-      "(.*) — LibreWolf": "<big>󰈹</big>   $1",
-      "Neovide": "<big></big>   Neovide",
-      "Calculator": "<big></big>   Calculator",
-      "(.*spotify.*)": "<big></big>   Spotify",
-      ".*Discord.*(#[a-zA-Z0-9-]+).*": "<big></big>    $1"
+      "(.*) — LibreWolf": "<big>󰈹</big>   $1"
     },
     "max-length": 32
   },
-  "tray": {
-    "icon-size": 32,
-    "spacing": 20
-  },
   "clock": {
-    "format": "<big>󱑁</big>   {:%H:%M:%S}",
-    "format-alt": "<big></big>   {:%Y/%m/%d}",
+    "format": "󱑁  {:%H:%M:%S}",
+    "format-alt": "  {:%Y/%m/%d}",
     "tooltip-format": "Clock",
     "interval": 1
   },
   "hyprland/workspaces": {
-    "format": "{name} <big>{windows}</big>",
+    "format": "{name} {windows}",
     "on-scroll-up": "hyprctl dispatch workspace r+1",
     "on-scroll-down": "hyprctl dispatch workspace r-1",
     "window-rewrite-default": "",
     "window-rewrite": {
-      "kitty": " ",
+      "title<.*youtube.*>": " ",
+      "kitty": " <big></big>",
       "neovide": " ",
       "librewolf": " 󰈹",
       "firefox": " 󰈹",
       "title<.*chrom.*>": " ",
-      "(.*Minecraft.*)": " 󰍳",
+      "title<.*minecraft.*>": " 󰍳",
       "title<.*discord.*>": " ",
-      "spotify": " ",
-      "prismlauncher": " ",
-      "steam": " 󰓓",
-      "title<.*youtube.*>": " ",
-      "title<.*vscod.*>": " 󰨞",
-      "zed": " ",
-      "title<.*dev.*>": " <big></big>",
-      "pwvucontrol": " <big>󰕾</big>",
-      "title<.*calculator.*>": " ",
-      "scrcpy": "  <big></big>"
+      "spotify": " "
     },
     "persistent-workspaces": {
       "HDMI-A-1": [
@@ -87,36 +67,13 @@
     "format-paused": "  {title} - {artist} <small>[{position}/{length}]</small>",
     "max-length": 32
   },
-  "cava": {
-    "framerate": 60,
-    "sensitivity": 1,
-    "bars": 8,
-    "method": "pulse",
-    "source": "auto",
-    "stereo": true,
-    "waves": true,
-    "bar_delimiter": 0,
-    "noise_reduction": 0.8,
-    "input_delay": 0,
-    "sleep_timer": 1,
-    "format-icons": [
-      "<small> ▁ </small>",
-      "<small> ▂ </small>",
-      "<small> ▃ </small>",
-      "<small> ▄ </small>",
-      "<small> ▅ </small>",
-      "<small> ▆ </small>",
-      "<small> ▇ </small>",
-      "<small> █ </small>"
-    ]
-  },
   "pulseaudio/slider": {
     "min": 0,
     "max": 150,
     "orientation": "horizontal"
   },
   "pulseaudio": {
-    "format": "{volume}%   <big>{icon}</big>",
+    "format": "{volume}%  {icon}",
     "format-muted": "",
     "format-icons": {
       "alsa_output.pci-0000_00_1b.0.analog-stereo": "󰓃",
@@ -134,17 +91,16 @@
     "on-click": "pwvucontrol"
   },
   "bluetooth": {
-    "format": "<big><big>󰂯</big></big>",
+    "format": "<big>󰂯</big>",
     "format-disabled": "",
     "format-connected": "{device_alias}  <big>/big>",
     "format-connected-battery": "{device_alias} <big></big> {device_battery_percentage}%",
-    "tooltip-format": "{status}",
     "on-click": "blueberry"
   },
   "network": {
-    "format": "<big>󰣼</big>",
-    "format-wifi": "<big></big>",
-    "format-ethernet": "<big></big>",
+    "format": "󰣼",
+    "format-wifi": "",
+    "format-ethernet": "",
     "tooltip-format": "Disconnected",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ifname}",

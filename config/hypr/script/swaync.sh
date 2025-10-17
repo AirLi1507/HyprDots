@@ -1,0 +1,2 @@
+killall swaync
+swaync &
